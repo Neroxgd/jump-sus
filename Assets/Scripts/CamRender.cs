@@ -10,6 +10,6 @@ public class CamRender : MonoBehaviour
 
     void Update()
     {
-        cam.fieldOfView = Mathf.Clamp(Mathf.Abs(_jambeWalk.ReturnSpeedWalk())*5, 35, 160);
+        cam.fieldOfView = Mathf.Clamp(Mathf.Abs(_jambeWalk.ReturnSpeedWalk())*5, 45, 160);
     }
 }
