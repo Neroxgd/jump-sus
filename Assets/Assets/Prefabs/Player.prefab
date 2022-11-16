@@ -438,7 +438,7 @@ MonoBehaviour:
   cam: {fileID: 4681803681396395582}
   lookSpeed: 1
   moveSpeed: 1
-  jumpforce: 20
+  jumpforce: 50
   minLookAngle: -90
   maxLookAngle: 90
   _characterController: {fileID: 4681803682561484451}

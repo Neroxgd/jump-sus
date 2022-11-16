@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     private Vector2 deltaLook;
     private float xRotation;
-    public float xRotateReturn(){return xRotation;}
+    public float xRotateReturn() { return xRotation; }
     private Vector2 moveDirection;
     [SerializeField] private Transform cam;
     [SerializeField] private float lookSpeed;
@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float maxLookAngle;
     [SerializeField] private CharacterController _characterController;
     private Vector2 deltalookmove = Vector2.zero;
-    public Vector2 DeltaLookMoveReturn() {return deltalookmove;}
+    public Vector2 DeltaLookMoveReturn() { return deltalookmove; }
     [SerializeField] private Camera _camera;
     void Awake()
     {
@@ -47,13 +47,17 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         //gravity
-        ySpeed += Physics.gravity.y * Time.deltaTime;
+        ySpeed += Physics.gravity.y * Time.deltaTime * 4;
         if (_characterController.isGrounded)
         {
             ySpeed = -.5f;
             //jump
             if (hasJump)
+            {
                 jumpforceaccumulate += jumpforce * Time.deltaTime;
+                jumpforceaccumulate = Mathf.Clamp(jumpforceaccumulate, 0, 50);
+            }
+                
             else
             {
                 ySpeed = jumpforceaccumulate;
@@ -64,7 +68,7 @@ public class PlayerController : MonoBehaviour
         //look + apply gravity
         deltalookmove += deltaLook;
         _characterController.Move(transform.TransformDirection(new Vector3(deltalookmove.x, ySpeed, deltalookmove.y)) * moveSpeed * Time.deltaTime);
-        
+
         //move y
         transform.Rotate(0f, moveDirection.x * lookSpeed, 0f);
         xRotation += moveDirection.y * lookSpeed;
@@ -72,5 +76,6 @@ public class PlayerController : MonoBehaviour
         //clamp + move x
         xRotation = Mathf.Clamp(xRotation, minLookAngle, maxLookAngle);
         cam.localEulerAngles = new Vector3(-xRotation, 0f, 0f);
+        print(jumpforceaccumulate);
     }
 }

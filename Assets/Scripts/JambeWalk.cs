@@ -44,7 +44,6 @@ public class JambeWalk : MonoBehaviour
             leglerp = Mathf.Clamp(leglerp, 0, 1);
             if (speedWalk > -.05 && speedWalk< .05)
                 leglerp = 0.5f;
-            print(speedWalk);
         }
     }
 }
