@@ -67,6 +67,7 @@ public class PlayerController : MonoBehaviour
 
         //look + apply gravity
         deltalookmove += deltaLook;
+        deltalookmove = new Vector2(Mathf.Clamp(deltalookmove.x, -30, 30), Mathf.Clamp(deltalookmove.y, -30, 30));
         _characterController.Move(transform.TransformDirection(new Vector3(deltalookmove.x, ySpeed, deltalookmove.y)) * moveSpeed * Time.deltaTime);
 
         //move y
@@ -76,6 +77,6 @@ public class PlayerController : MonoBehaviour
         //clamp + move x
         xRotation = Mathf.Clamp(xRotation, minLookAngle, maxLookAngle);
         cam.localEulerAngles = new Vector3(-xRotation, 0f, 0f);
-        print(jumpforceaccumulate);
+        print(deltalookmove);
     }
 }
