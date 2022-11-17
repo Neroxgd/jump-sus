@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Photon.Pun;
 
 public class IAMobs : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class IAMobs : MonoBehaviour
     [SerializeField] private float maxRandomPosX;
     [SerializeField] private float minRandomPosY;
     [SerializeField] private float maxRandomPosY;
+    [SerializeField] private PlayerController _playerController;
 
     void Start()
     {
@@ -20,7 +22,7 @@ public class IAMobs : MonoBehaviour
         RandomPos();
         agentGoToPos();
     }
- 
+
     public void agentGoToPos()
     {
         agent.SetDestination(randompos);
@@ -37,5 +39,12 @@ public class IAMobs : MonoBehaviour
             RandomPos();
             agentGoToPos();
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        _playerController = other.GetComponent<PlayerController>();
+        if (other.gameObject.CompareTag("Player"))
+            _playerController.goToSPawn();
     }
 }

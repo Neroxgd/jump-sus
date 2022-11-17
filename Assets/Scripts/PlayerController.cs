@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Photon.Pun;
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,10 +21,15 @@ public class PlayerController : MonoBehaviour
     private Vector2 deltalookmove = Vector2.zero;
     public Vector2 DeltaLookMoveReturn() { return deltalookmove; }
     [SerializeField] private Camera _camera;
-    void Awake()
+    public PhotonView view;
+    void Start()
     {
-
+        view = GetComponent<PhotonView>();
         Cursor.lockState = CursorLockMode.Locked;
+        if (!view.IsMine)
+        {
+            _camera.enabled = false;
+        }
     }
 
     public void Look(InputAction.CallbackContext callback)
@@ -43,39 +49,55 @@ public class PlayerController : MonoBehaviour
     {
         moveDirection = callback.ReadValue<Vector2>();
     }
+    public void goToSPawn()
+    {
+        if (view.IsMine)
+        {
+            _characterController.enabled = false;
+            transform.position = new Vector3(0, 2, 0);
+            _characterController.enabled = true;
+        }
+    }
 
     private void Update()
     {
-        //gravity
-        ySpeed += Physics.gravity.y * Time.deltaTime * 4;
-        if (_characterController.isGrounded)
+        if (view.IsMine)
         {
-            ySpeed = -.5f;
-            //jump
-            if (hasJump)
+            //gravity
+            ySpeed += Physics.gravity.y * Time.deltaTime * 4;
+            if (_characterController.isGrounded)
             {
-                jumpforceaccumulate += jumpforce * Time.deltaTime;
-                jumpforceaccumulate = Mathf.Clamp(jumpforceaccumulate, 0, 50);
+                ySpeed = -.5f;
+                //jump
+                if (hasJump)
+                {
+                    jumpforceaccumulate += jumpforce * Time.deltaTime;
+                    jumpforceaccumulate = Mathf.Clamp(jumpforceaccumulate, 0, 50);
+                }
+
+                else
+                {
+                    ySpeed = jumpforceaccumulate;
+                    jumpforceaccumulate = 0;
+                }
             }
-                
-            else
-            {
-                ySpeed = jumpforceaccumulate;
-                jumpforceaccumulate = 0;
-            }
+
+            //look + apply gravity
+            deltalookmove += deltaLook;
+            deltalookmove = new Vector2(Mathf.Clamp(deltalookmove.x, -30, 30), Mathf.Clamp(deltalookmove.y, -30, 30));
+            _characterController.Move(transform.TransformDirection(new Vector3(deltalookmove.x, ySpeed, deltalookmove.y)) * moveSpeed * Time.deltaTime);
+
+            //move y
+            transform.Rotate(0f, moveDirection.x * lookSpeed, 0f);
+            xRotation += moveDirection.y * lookSpeed;
+
+            //clamp + move x
+            xRotation = Mathf.Clamp(xRotation, minLookAngle, maxLookAngle);
+            cam.localEulerAngles = new Vector3(-xRotation, 0f, 0f);
+
+            if (transform.position.y < -20)
+                transform.position = new Vector3(0, 2, 0);
         }
 
-        //look + apply gravity
-        deltalookmove += deltaLook;
-        deltalookmove = new Vector2(Mathf.Clamp(deltalookmove.x, -30, 30), Mathf.Clamp(deltalookmove.y, -30, 30));
-        _characterController.Move(transform.TransformDirection(new Vector3(deltalookmove.x, ySpeed, deltalookmove.y)) * moveSpeed * Time.deltaTime);
-
-        //move y
-        transform.Rotate(0f, moveDirection.x * lookSpeed, 0f);
-        xRotation += moveDirection.y * lookSpeed;
-
-        //clamp + move x
-        xRotation = Mathf.Clamp(xRotation, minLookAngle, maxLookAngle);
-        cam.localEulerAngles = new Vector3(-xRotation, 0f, 0f);
     }
 }
