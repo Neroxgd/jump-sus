@@ -77,6 +77,5 @@ public class PlayerController : MonoBehaviour
         //clamp + move x
         xRotation = Mathf.Clamp(xRotation, minLookAngle, maxLookAngle);
         cam.localEulerAngles = new Vector3(-xRotation, 0f, 0f);
-        print(deltalookmove);
     }
 }
