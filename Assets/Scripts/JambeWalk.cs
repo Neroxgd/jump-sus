@@ -12,7 +12,6 @@ public class JambeWalk : MonoBehaviour
     public float ReturnSpeedWalk(){return speedWalk;}
     private bool directionwalk = true;
     [SerializeField] private float SetSpeedWalk;
-    [SerializeField] private Transform parentRotate;
 
     void Update()
     {

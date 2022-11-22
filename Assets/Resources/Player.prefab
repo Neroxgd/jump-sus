@@ -815,4 +815,3 @@ MonoBehaviour:
   Lleg: {fileID: 1961193551909805230}
   leglerp: 0.5
   SetSpeedWalk: 1
-  parentRotate: {fileID: 4681803682561484448}

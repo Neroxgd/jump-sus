@@ -37,7 +37,7 @@ public class IAMobs : MonoBehaviour
         if (posagent.position == randompos || !agent.hasPath)
         {
             RandomPos();
-            agentGoToPos();
+            StartCoroutine(waitfornewpos());
         }
     }
 
@@ -46,5 +46,11 @@ public class IAMobs : MonoBehaviour
         _playerController = other.GetComponent<PlayerController>();
         if (other.gameObject.CompareTag("Player"))
             _playerController.goToSPawn();
+    }
+
+    IEnumerator waitfornewpos()
+    {
+        yield return new WaitForSeconds(3);
+        agentGoToPos();
     }
 }
