@@ -4717,7 +4717,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh180596
+  m_Name: pb_Mesh32012
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10168,7 +10168,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 646801380}
-  speed: 10
+  speed: 1
+  easing: 7
 --- !u!54 &1993422923
 Rigidbody:
   m_ObjectHideFlags: 0

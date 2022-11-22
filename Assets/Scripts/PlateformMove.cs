@@ -1,21 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PlateformMove : MonoBehaviour
 {
     [SerializeField] private Transform target;
     [SerializeField] private float speed = 10f;
-    private Vector3 spawnpos;
+    [SerializeField] Ease easing;
+    /*private Vector3 spawnpos;
     private Vector3 endpos;
-    private bool sideMove = true;
+    private bool sideMove = true;*/
     void Start()
     {
-        endpos = target.position;
-        spawnpos = transform.position;
+        // endpos = target.position;
+        // spawnpos = transform.position;
+        transform.DOMove(target.position, speed).SetEase(easing).SetLoops(-1, LoopType.Yoyo);
     }
 
-    void Update()
+    /*void Update()
     {
         float step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, target.position, step);
@@ -24,5 +27,5 @@ public class PlateformMove : MonoBehaviour
             sideMove = !sideMove;
 
         target.position = sideMove ? endpos : spawnpos;
-    }
+    }*/
 }
