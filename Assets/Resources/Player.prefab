@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 4681803682561484450}
   - component: {fileID: 4681803682561484451}
   - component: {fileID: 7317629570637762019}
-  - component: {fileID: -3594484686182690156}
+  - component: {fileID: 1177282390399842553}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -438,7 +438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 4681803681396395582}
-  lookSpeed: 1
+  lookSpeed: 2
   moveSpeed: 1
   jumpforce: 50
   minLookAngle: -90
@@ -562,11 +562,12 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: -3594484686182690156}
+  - {fileID: 1177282390399842553}
+  - {fileID: 6690156438771295474}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &-3594484686182690156
+--- !u!114 &1177282390399842553
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -775,6 +776,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8073129699482003415}
   - component: {fileID: 8881753897081224558}
+  - component: {fileID: 6690156438771295474}
   m_Layer: 0
   m_Name: uploads_files_3232353_AmongUs
   m_TagString: Untagged
@@ -815,3 +817,36 @@ MonoBehaviour:
   Lleg: {fileID: 1961193551909805230}
   leglerp: 0.5
   SetSpeedWalk: 1
+--- !u!114 &6690156438771295474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8881753897081224557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PositionModel:
+    SynchronizeEnabled: 1
+    TeleportEnabled: 1
+    TeleportIfDistanceGreaterThan: 3
+    InterpolateOption: 2
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 1
+    ExtrapolateOption: 0
+    ExtrapolateSpeed: 1
+    ExtrapolateIncludingRoundTripTime: 1
+    ExtrapolateNumberOfStoredPositions: 1
+  m_RotationModel:
+    SynchronizeEnabled: 1
+    InterpolateOption: 2
+    InterpolateRotateTowardsSpeed: 180
+    InterpolateLerpSpeed: 5
+  m_ScaleModel:
+    SynchronizeEnabled: 0
+    InterpolateOption: 0
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 0
