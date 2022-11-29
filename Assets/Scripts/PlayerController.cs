@@ -94,9 +94,6 @@ public class PlayerController : MonoBehaviour
             //clamp + move x
             xRotation = Mathf.Clamp(xRotation, minLookAngle, maxLookAngle);
             cam.localEulerAngles = new Vector3(-xRotation, 0f, 0f);
-
-            if (transform.position.y < -20)
-                transform.position = new Vector3(0, 2, 0);
         }
 
     }
