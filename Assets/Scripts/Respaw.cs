@@ -25,6 +25,11 @@ public class Respaw : MonoBehaviour
             CurrentCheckPoint = transform.position;
     }
 
+    public void SetCurrentCheckpoint(Vector3 vector3)
+    {
+        CurrentCheckPoint = vector3;
+    }
+
     public Vector3 ReturnCurrentCheckpoint()
     {
         return CurrentCheckPoint;
