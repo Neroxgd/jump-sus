@@ -5,19 +5,28 @@ using UnityEngine;
 public class Respaw : MonoBehaviour
 {
     [SerializeField] private Transform spawn1;
-    [SerializeField] private Transform spawn2;
-    [SerializeField] private Transform spawn3;
     [SerializeField] private Transform player;
-    private Vector3 currentCheckPoint;
+    private Vector3 CurrentCheckPoint;
 
     void Start()
     {
-        currentCheckPoint = spawn1.position;
+        CurrentCheckPoint = spawn1.position;
     }
 
-    void Update()
+    void LateUpdate()
     {
-        if (transform.position.y < -20)
-                player.position = currentCheckPoint;
+        if (player.position.y < -20)
+            player.position = CurrentCheckPoint;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+            CurrentCheckPoint = transform.position;
+    }
+
+    public Vector3 ReturnCurrentCheckpoint()
+    {
+        return CurrentCheckPoint;
     }
 }

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private float ySpeed;
     private bool hasJump;
     [SerializeField] private float moveSpeed;
+    [SerializeField] Respaw respaw;
     private float jumpforceaccumulate = 0;
     [SerializeField] private float jumpforce = 20;
     [SerializeField] private float minLookAngle;
@@ -24,12 +26,18 @@ public class PlayerController : MonoBehaviour
     public PhotonView view;
     void Start()
     {
-        view = GetComponent<PhotonView>();
-        Cursor.lockState = CursorLockMode.Locked;
-        if (!view.IsMine)
+        if (SceneManager.GetActiveScene().name == "SampleScene")
         {
-            _camera.enabled = false;
+            view = GetComponent<PhotonView>();
+            if (!view.IsMine)
+            {
+                _camera.enabled = false;
+            }
         }
+
+
+        Cursor.lockState = CursorLockMode.Locked;
+
     }
 
     public void Look(InputAction.CallbackContext callback)
@@ -51,17 +59,17 @@ public class PlayerController : MonoBehaviour
     }
     public void goToSPawn()
     {
-        if (view.IsMine)
+        if (SceneManager.GetActiveScene().name == "SampleSceneSolo" || view.IsMine)
         {
             _characterController.enabled = false;
-            transform.position = new Vector3(0, 2, 0);
+            transform.position = respaw.ReturnCurrentCheckpoint();
             _characterController.enabled = true;
         }
     }
 
     private void Update()
     {
-        if (view.IsMine)
+        if (SceneManager.GetActiveScene().name == "SampleSceneSolo" || view.IsMine)
         {
             //gravity
             ySpeed += Physics.gravity.y * Time.deltaTime * 4;
