@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private float ySpeed;
     private bool hasJump;
     [SerializeField] private float moveSpeed;
+    [SerializeField] private Interface _interface;
     [SerializeField] Respaw respaw;
     private float jumpforceaccumulate = 0;
     [SerializeField] private float jumpforce = 20;
@@ -64,6 +65,8 @@ public class PlayerController : MonoBehaviour
             _characterController.enabled = false;
             transform.position = respaw.ReturnCurrentCheckpoint();
             _characterController.enabled = true;
+            _interface.CompterDeath();
+
         }
     }
 
@@ -81,12 +84,14 @@ public class PlayerController : MonoBehaviour
                 {
                     jumpforceaccumulate += jumpforce * Time.deltaTime;
                     jumpforceaccumulate = Mathf.Clamp(jumpforceaccumulate, 0, 50);
+                    _interface.jumpBarre(jumpforceaccumulate/50);  
                 }
 
                 else
                 {
                     ySpeed = jumpforceaccumulate;
                     jumpforceaccumulate = 0;
+                    _interface.jumpBarre(jumpforceaccumulate/50);
                 }
             }
 

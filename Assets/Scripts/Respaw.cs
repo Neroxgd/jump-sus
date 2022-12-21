@@ -7,6 +7,7 @@ public class Respaw : MonoBehaviour
     [SerializeField] private Transform spawn1;
     [SerializeField] private Transform player;
     private Vector3 CurrentCheckPoint;
+    [SerializeField] private Interface _interface;
 
     void Start()
     {
@@ -16,7 +17,11 @@ public class Respaw : MonoBehaviour
     void LateUpdate()
     {
         if (player.position.y < -20)
+        {
             player.position = CurrentCheckPoint;
+            _interface.CompterDeath();
+        }
+            
     }
 
     void OnTriggerEnter(Collider other)
