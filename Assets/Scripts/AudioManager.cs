@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -37,7 +35,7 @@ public class AudioManager : MonoBehaviour
             audioSource.Play();
             return;
         }
-        
+
         audioSource.PlayOneShot(audioClip);
     }
 }

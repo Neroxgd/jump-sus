@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    //get the inputs
     public void Look(InputAction.CallbackContext callback)
     {
         deltaLook = callback.ReadValue<Vector2>();
@@ -59,14 +60,18 @@ public class PlayerController : MonoBehaviour
     {
         moveDirection = callback.ReadValue<Vector2>();
     }
-    public void goToSPawn()
+    
+
+    //teleport at respawn / checkpoint
+    public void goToSPawn(bool death)
     {
         if (SceneManager.GetActiveScene().name == "SampleSceneSolo" || view.IsMine)
         {
             _characterController.enabled = false;
             transform.position = respaw.ReturnCurrentCheckpoint();
             _characterController.enabled = true;
-            _interface.CompterDeath();
+            if (death)
+                _interface.CompterDeath();
 
         }
     }
@@ -85,14 +90,14 @@ public class PlayerController : MonoBehaviour
                 {
                     jumpforceaccumulate += jumpforce * Time.deltaTime;
                     jumpforceaccumulate = Mathf.Clamp(jumpforceaccumulate, 0, 50);
-                    _interface.jumpBarre(jumpforceaccumulate/50);  
+                    _interface.jumpBarre(jumpforceaccumulate / 50);
                 }
 
-                else if (jumpforceaccumulate>0)
+                else if (jumpforceaccumulate > 0)
                 {
                     ySpeed = jumpforceaccumulate;
                     jumpforceaccumulate = 0;
-                    _interface.jumpBarre(jumpforceaccumulate/50);
+                    _interface.jumpBarre(jumpforceaccumulate / 50);
                     audioManager.PlayAudioClip("Jump sound", false);
                 }
             }

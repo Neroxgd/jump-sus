@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+//teleporte at the end of the game
 public class EndGame : MonoBehaviour
 {
     [SerializeField] private PlayerController playerController;
@@ -14,7 +13,7 @@ public class EndGame : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             respaw.SetCurrentCheckpoint(new Vector3(16.4f,92.2f,332.5f));
-            playerController.goToSPawn();
+            playerController.goToSPawn(false);
             laser.SetActive(false);
             audioManager.PlayAudioClip("Victory Sound", false);
         }

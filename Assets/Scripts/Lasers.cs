@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
@@ -21,6 +19,6 @@ public class Lasers : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-            playerController.goToSPawn();
+            playerController.goToSPawn(true);
     }
 }

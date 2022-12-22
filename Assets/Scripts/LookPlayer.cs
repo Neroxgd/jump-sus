@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+//UI look player
 public class LookPlayer : MonoBehaviour
 {
     [SerializeField] private Transform player;

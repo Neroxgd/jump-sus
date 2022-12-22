@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Respaw : MonoBehaviour
@@ -14,6 +12,7 @@ public class Respaw : MonoBehaviour
         CurrentCheckPoint = spawn1.position;
     }
 
+    //set checkpoints
     void LateUpdate()
     {
         if (player.position.y < -20)

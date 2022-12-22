@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+//vision effect when you run
 public class CamRender : MonoBehaviour
 {
-    [SerializeField] private float _FieldofView;
     [SerializeField] private Camera cam;
     [SerializeField] private JambeWalk _jambeWalk;
 

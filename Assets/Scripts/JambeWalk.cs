@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class JambeWalk : MonoBehaviour
@@ -31,12 +29,6 @@ public class JambeWalk : MonoBehaviour
                 directionwalk = !directionwalk;
             else if (leglerp >= .99f)
                 directionwalk = !directionwalk;
-
-
-            // if (directionwalk)
-            //     speedWalk = -Mathf.Abs(speedWalk);
-            // else
-            //     speedWalk = Mathf.Abs(speedWalk);
 
             speedWalk = directionwalk ? -Mathf.Abs(speedWalk) : Mathf.Abs(speedWalk);
 

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using Photon.Pun;
@@ -23,6 +22,7 @@ public class IAMobs : MonoBehaviour
         agentGoToPos();
     }
 
+    //set the random paterne of the mob
     public void agentGoToPos()
     {
         agent.SetDestination(randompos);
@@ -41,11 +41,12 @@ public class IAMobs : MonoBehaviour
         }
     }
 
+    //kill the player
     private void OnTriggerEnter(Collider other)
     {
         _playerController = other.GetComponent<PlayerController>();
         if (other.gameObject.CompareTag("Player"))
-            _playerController.goToSPawn();
+            _playerController.goToSPawn(true);
     }
 
     IEnumerator waitfornewpos()
