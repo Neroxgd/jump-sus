@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private bool hasJump;
     [SerializeField] private float moveSpeed;
     [SerializeField] private Interface _interface;
+    [SerializeField] AudioManager audioManager;
     [SerializeField] Respaw respaw;
     private float jumpforceaccumulate = 0;
     [SerializeField] private float jumpforce = 20;
@@ -87,11 +88,12 @@ public class PlayerController : MonoBehaviour
                     _interface.jumpBarre(jumpforceaccumulate/50);  
                 }
 
-                else
+                else if (jumpforceaccumulate>0)
                 {
                     ySpeed = jumpforceaccumulate;
                     jumpforceaccumulate = 0;
                     _interface.jumpBarre(jumpforceaccumulate/50);
+                    audioManager.PlayAudioClip("Jump sound", false);
                 }
             }
 
