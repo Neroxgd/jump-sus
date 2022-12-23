@@ -8,6 +8,7 @@ public class IAMobs : MonoBehaviour
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private Transform posagent;
     private Vector3 randompos;
+    [SerializeField] private AudioManager audioManager;
     [SerializeField] private float minRandomPosX;
     [SerializeField] private float maxRandomPosX;
     [SerializeField] private float minRandomPosY;
@@ -46,7 +47,11 @@ public class IAMobs : MonoBehaviour
     {
         _playerController = other.GetComponent<PlayerController>();
         if (other.gameObject.CompareTag("Player"))
+        {
             _playerController.goToSPawn(true);
+            audioManager.PlayAudioClip("Among Us (Kill)", false);
+        }
+            
     }
 
     IEnumerator waitfornewpos()

@@ -6,6 +6,8 @@ public class Respaw : MonoBehaviour
     [SerializeField] private Transform player;
     private Vector3 CurrentCheckPoint;
     [SerializeField] private Interface _interface;
+    [SerializeField] private PlayerController playerController;
+    [SerializeField] AudioManager audioManager;
 
     void Start()
     {
@@ -13,12 +15,13 @@ public class Respaw : MonoBehaviour
     }
 
     //set checkpoints
-    void LateUpdate()
+    void Update()
     {
+        //kill if you fall
         if (player.position.y < -20)
         {
-            player.position = CurrentCheckPoint;
-            _interface.CompterDeath();
+            playerController.goToSPawn(true);
+            audioManager.PlayAudioClip("Lego Yoda Death", false);
         }
             
     }

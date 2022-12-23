@@ -930,10 +930,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
   posagent: {fileID: 4882590064214274}
+  audioManager: {fileID: 0}
   minRandomPosX: -16
   maxRandomPosX: 35
   minRandomPosY: 200
   maxRandomPosY: 250
+  _playerController: {fileID: 0}
 --- !u!136 &909172252034986358
 CapsuleCollider:
   m_ObjectHideFlags: 0
