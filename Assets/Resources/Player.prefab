@@ -384,7 +384,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d1ace3ea1ad4ff41a588284aef180de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _FieldofView: 120
   cam: {fileID: 4681803681396395581}
   _jambeWalk: {fileID: 8881753897081224558}
 --- !u!1 &4681803682561484455
@@ -438,8 +437,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 4681803681396395582}
-  lookSpeed: 2
+  lookSpeed: 1.5
   moveSpeed: 1
+  _interface: {fileID: 0}
+  audioManager: {fileID: 0}
+  respaw: {fileID: 0}
   jumpforce: 50
   minLookAngle: -90
   maxLookAngle: 90

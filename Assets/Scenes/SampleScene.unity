@@ -296,6 +296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 62027967}
   posagent: {fileID: 62027966}
+  audioManager: {fileID: 0}
   minRandomPosX: -16
   maxRandomPosX: 35
   minRandomPosY: 200
@@ -1092,6 +1093,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 170220665}
   posagent: {fileID: 170220664}
+  audioManager: {fileID: 0}
   minRandomPosX: -16
   maxRandomPosX: 35
   minRandomPosY: 200
@@ -2109,6 +2111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 274036235}
   posagent: {fileID: 274036238}
+  audioManager: {fileID: 0}
   minRandomPosX: -16
   maxRandomPosX: 35
   minRandomPosY: 200
@@ -2699,6 +2702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 359424933}
   posagent: {fileID: 359424936}
+  audioManager: {fileID: 0}
   minRandomPosX: -16
   maxRandomPosX: 35
   minRandomPosY: 200
@@ -2994,6 +2998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 407387134}
   posagent: {fileID: 407387133}
+  audioManager: {fileID: 0}
   minRandomPosX: -16
   maxRandomPosX: 35
   minRandomPosY: 200
@@ -3109,6 +3114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 409817298}
   posagent: {fileID: 409817297}
+  audioManager: {fileID: 0}
   minRandomPosX: -16
   maxRandomPosX: 35
   minRandomPosY: 200
@@ -3318,6 +3324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 456375184}
   posagent: {fileID: 456375186}
+  audioManager: {fileID: 0}
   minRandomPosX: -16
   maxRandomPosX: 35
   minRandomPosY: 200
@@ -3485,6 +3492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 504998945}
   posagent: {fileID: 504998947}
+  audioManager: {fileID: 0}
   minRandomPosX: -16
   maxRandomPosX: 35
   minRandomPosY: 200
@@ -3623,6 +3631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 525182116}
   posagent: {fileID: 525182119}
+  audioManager: {fileID: 0}
   minRandomPosX: -16
   maxRandomPosX: 35
   minRandomPosY: 200
@@ -3886,6 +3895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 566585930}
   posagent: {fileID: 566585932}
+  audioManager: {fileID: 0}
   minRandomPosX: -16
   maxRandomPosX: 35
   minRandomPosY: 200
@@ -4461,6 +4471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 702781516}
   posagent: {fileID: 702781515}
+  audioManager: {fileID: 0}
   minRandomPosX: -16
   maxRandomPosX: 35
   minRandomPosY: 200
@@ -5160,6 +5171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 874760971}
   posagent: {fileID: 874760970}
+  audioManager: {fileID: 0}
   minRandomPosX: -16
   maxRandomPosX: 35
   minRandomPosY: 200
@@ -7280,6 +7292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 1378862733}
   posagent: {fileID: 1378862731}
+  audioManager: {fileID: 0}
   minRandomPosX: -16
   maxRandomPosX: 35
   minRandomPosY: 200
@@ -7417,6 +7430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 1388179912}
   posagent: {fileID: 1388179911}
+  audioManager: {fileID: 0}
   minRandomPosX: -16
   maxRandomPosX: 35
   minRandomPosY: 200
@@ -8009,6 +8023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 1566215440}
   posagent: {fileID: 1566215443}
+  audioManager: {fileID: 0}
   minRandomPosX: -16
   maxRandomPosX: 35
   minRandomPosY: 200
@@ -8308,6 +8323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 1612005887}
   posagent: {fileID: 1612005886}
+  audioManager: {fileID: 0}
   minRandomPosX: -16
   maxRandomPosX: 35
   minRandomPosY: 200
@@ -8783,6 +8799,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 1730743484}
   posagent: {fileID: 1730743483}
+  audioManager: {fileID: 0}
   minRandomPosX: -16
   maxRandomPosX: 35
   minRandomPosY: 200
@@ -9024,6 +9041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 1747198845}
   posagent: {fileID: 1747198844}
+  audioManager: {fileID: 0}
   minRandomPosX: -16
   maxRandomPosX: 35
   minRandomPosY: 200
@@ -9139,6 +9157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 1773132905}
   posagent: {fileID: 1773132904}
+  audioManager: {fileID: 0}
   minRandomPosX: -16
   maxRandomPosX: 35
   minRandomPosY: 200
@@ -9462,6 +9481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 1885784521}
   posagent: {fileID: 1885784524}
+  audioManager: {fileID: 0}
   minRandomPosX: -16
   maxRandomPosX: 35
   minRandomPosY: 200
@@ -10296,6 +10316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 2001661303}
   posagent: {fileID: 2001661302}
+  audioManager: {fileID: 0}
   minRandomPosX: -16
   maxRandomPosX: 35
   minRandomPosY: 200
@@ -10473,6 +10494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 2025627352}
   posagent: {fileID: 2025627351}
+  audioManager: {fileID: 0}
   minRandomPosX: -16
   maxRandomPosX: 35
   minRandomPosY: 200
@@ -10966,6 +10988,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 2091564354}
   posagent: {fileID: 2091564356}
+  audioManager: {fileID: 0}
   minRandomPosX: -16
   maxRandomPosX: 35
   minRandomPosY: 200
@@ -11041,6 +11064,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 2114876114}
   posagent: {fileID: 2114876117}
+  audioManager: {fileID: 0}
   minRandomPosX: -16
   maxRandomPosX: 35
   minRandomPosY: 200
